@@ -24,7 +24,7 @@ Bitrix-модуль для приёма оплаты с пластиковых �
 
 2. Заполните форму «Параметры платежной системы»:
    
-![Параметры платёжной системы](http://raw.githubusercontent.com/Futubank/futubank/master/static/bitrix/ps-param.png)
+![Параметры платёжной системы](http://raw.githubusercontent.com/Futubank/futubank/master/static/bitrix/ps-params.png)
 
    * название: Futubank.com
    * активность: отмечено
