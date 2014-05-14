@@ -56,26 +56,26 @@ $arPSCorrespondence = array(
     'DATE_INSERT' => array(
         'NAME'  => GetMessage('DATE_INSERT'),
         'DESCR' => GetMessage('DATE_INSERT_DESCR'),
-        'VALUE' => '',
-        'TYPE'  => '',
+        'VALUE' => 'DATE_INSERT',
+        'TYPE'  => 'ORDER',
     ),
     'CLIENT_EMAIL' => array(
         'NAME'  => GetMessage('CLIENT_EMAIL'),
         'DESCR' => GetMessage('CLIENT_EMAIL_DESCR'),
         'VALUE' => 'EMAIL',
-        'TYPE'  => 'ORDER',
+        'TYPE'  => 'PROPERTY',
     ),
     'CLIENT_NAME' => array(
         'NAME'  => GetMessage('CLIENT_NAME'),
         'DESCR' => GetMessage('CLIENT_NAME_DESCR'),
         'VALUE' => 'FIO',
-        'TYPE'  => 'ORDER',
+        'TYPE'  => 'PROPERTY',
     ),
     'CLIENT_PHONE' => array(
         'NAME'  => GetMessage('CLIENT_PHONE'),
         'DESCR' => GetMessage('CLIENT_PHONE_DESCR'),
         'VALUE' => 'PHONE',
-        'TYPE'  => 'ORDER',
+        'TYPE'  => 'PROPERTY',
     ),
 );
 ?>
