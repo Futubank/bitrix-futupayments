@@ -53,6 +53,10 @@ Bitrix-модуль для приёма оплаты с пластиковых �
 
    ![success_url и fail_url](http://raw.githubusercontent.com/Futubank/futubank/master/static/bitrix/urls.png)
 
+Не забудьте сохранить сделанные изменения:
+
+   ![success_url и fail_url](http://raw.githubusercontent.com/Futubank/futubank/master/static/bitrix/save.png)
+
 Настройка уведомлений об оплате
 ===============================
 
