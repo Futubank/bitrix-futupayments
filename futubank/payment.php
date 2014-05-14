@@ -25,7 +25,7 @@ $form = $ff->compose(
     CSalePaySystemAction::GetParamValue('CLIENT_PHONE'),
     CSalePaySystemAction::GetParamValue('SUCCESS_URL'),
     CSalePaySystemAction::GetParamValue('FAIL_URL'),
-    CMain::GetCurUri()
+    'http://'.SITE_SERVER_NAME.$APPLICATION->GetCurUri()
 );
 
 ?>
@@ -33,7 +33,7 @@ $form = $ff->compose(
     <div class="tablebodytext">
         <?=GetMessage('PYM_TITLE')?><br>
         <?=GetMessage('PYM_ORDER')?> <?=$order_id.'  '.CSalePaySystemAction::GetParamValue('DATE_INSERT')?><br>
-        <?=GetMessage('PYM_TO_PAY')?> <b><?=SaleFormatCurrency(CSalePaySystemAction::GetParamValue('SHOULD_PAY'), CSalePaySystemAction::GetParamValue('CURRENCY'))?></b>
+        <?=GetMessage('PYM_TO_PAY')?> <b><?=SaleFormatCurrency(CSalePaySystemAction::GetParamValue('AMOUNT'), CSalePaySystemAction::GetParamValue('CURRENCY'))?></b>
         <p>
             <input type="hidden" name="FinalStep" value="1">
             <?=FutubankForm::array_to_hidden_fields($form)?>
