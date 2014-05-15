@@ -1,5 +1,7 @@
 <?if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();?><?
 
+include('futubank_core.php');
+
 $ff = new FutubankForm(
     CSalePaySystemAction::GetParamValue('MERCHANT_ID'),
     CSalePaySystemAction::GetParamValue('SECRET_KEY'),
@@ -8,17 +10,19 @@ $ff = new FutubankForm(
 
 $error = null;
 if (!$ff->is_signature_correct($_POST)) {
-    $error = "некорректное значение параметроа 'signature'";
+    $error = "Incorrect 'signature'";
 } else  if (!($order_id = IntVal($_POST['order_id']))) {
-    $error = "не передан параметр 'order_id'";
+    $error = "Empty 'order_id'";
 } else if (!($order = CSaleOrder::GetByID($order_id))) {
-    $error = "не найден заказ №$order_id";
+    $error = 'Unknown order_id';
 }
 
 if ($error) {
-    echo "ОШИБКА: $error\n";
+    echo "ERROR: $error\n";
 } else {
-    if ($ff->is_order_completed($_POST)) {        
+    echo "OK$order_id\n";
+    if ($ff->is_order_completed($_POST)) {
+        echo "completed";
         CSalePaySystemAction::InitParamArrays($order, $order_id);
         CSaleOrder::Update($order_id, array(
             'PS_STATUS'         => 'Y',
@@ -30,8 +34,10 @@ if ($error) {
         if (CSalePaySystemAction::GetParamValue('PYM_CHANGE_STATUS_PAY') == 'Y') {
             CSaleOrder::PayOrder($order_id, 'Y');
         }
-    }
-    echo "OK$order_id\n";
+    } else {
+        echo "not completed";
+        var_dump($_POST);
+    } 
 }
 
 ?>

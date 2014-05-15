@@ -57,6 +57,26 @@ Bitrix-модуль для приёма оплаты с пластиковых �
 
    ![success_url и fail_url](http://raw.githubusercontent.com/Futubank/futubank/master/static/bitrix/save.png)
 
+Теперь попробуйте создать заказ в магазине и оплатить его через Futubank.
+
+
 Настройка уведомлений об оплате
 ===============================
 
+```php
+<?
+ob_start();
+require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
+ob_end_clean();
+ob_end_flush();
+
+$APPLICATION->IncludeComponent( 
+    'bitrix:sale.order.payment.receive',
+    '', 
+    Array( 
+        'PAY_SYSTEM_ID' => '<вставьте здень номер платёжной системы>', 
+        'PERSON_TYPE_ID' => '1',
+    )
+);
+?>
+```
