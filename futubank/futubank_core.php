@@ -31,8 +31,7 @@ class FutubankForm {
     private $merchant_id;
     private $secret_key;
     private $is_test;
-
-    #const HOST = 'https://secure.futubank.com';
+    
     const HOST = 'https://secure.futubank.com';
 
     public function __construct($merchant_id, $secret_key, $is_test) {
@@ -43,9 +42,9 @@ class FutubankForm {
 
     public function get_url() {
         if ($this->is_test) {
-            return self::HOST . '/pay/';
-        } else {
             return self::HOST . '/testing-pay/';
+        } else {
+            return self::HOST . '/pay/';
         }
     }
 

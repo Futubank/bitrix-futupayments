@@ -53,12 +53,12 @@ $arPSCorrespondence = array(
         'VALUE' => 'CURRENCY',
         'TYPE'  => 'ORDER',
     ),
-    'DATE_INSERT' => array(
-        'NAME'  => GetMessage('DATE_INSERT'),
-        'DESCR' => GetMessage('DATE_INSERT_DESCR'),
-        'VALUE' => 'DATE_INSERT',
-        'TYPE'  => 'ORDER',
-    ),
+    // 'DATE_INSERT' => array(
+    //     'NAME'  => GetMessage('DATE_INSERT'),
+    //     'DESCR' => GetMessage('DATE_INSERT_DESCR'),
+    //     'VALUE' => 'DATE_INSERT',
+    //     'TYPE'  => 'ORDER',
+    // ),
     'CLIENT_EMAIL' => array(
         'NAME'  => GetMessage('CLIENT_EMAIL'),
         'DESCR' => GetMessage('CLIENT_EMAIL_DESCR'),
