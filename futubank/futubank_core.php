@@ -32,8 +32,7 @@ class FutubankForm {
     private $secret_key;
     private $is_test;
 
-    #const HOST = 'https://secure.futubank.com';
-    const HOST = 'http://10.0.0.108:8012';
+    const HOST = 'https://secure.futubank.com';
 
     public function __construct($merchant_id, $secret_key, $is_test) {
         $this->merchant_id = $merchant_id;
