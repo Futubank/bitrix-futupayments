@@ -74,7 +74,7 @@ $APPLICATION->IncludeComponent(
     'bitrix:sale.order.payment.receive',
     '', 
     Array( 
-        'PAY_SYSTEM_ID' => '<вставьте здень номер платёжной системы>', 
+        'PAY_SYSTEM_ID' => '<ID платёжной системы>', 
         'PERSON_TYPE_ID' => '1',
     )
 );

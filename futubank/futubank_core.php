@@ -115,7 +115,7 @@ class FutubankForm {
 
     private function double_sha1($data) {
         for ($i = 0; $i < 2; $i++) {
-            $data = sha1($this->secret_key . $data);   
+            $data = sha1($this->secret_key . $data);
         }
         return $data;
     }
