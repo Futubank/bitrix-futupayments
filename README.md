@@ -32,7 +32,7 @@ Bitrix-модуль для приёма оплаты с пластиковых �
 
 теперь показывается строчка «It works!»:
 
-   ![success_url и fail_url](http://raw.githubusercontent.com/Futubank/futubank/master/static/bitrix/itworks.png)
+![success_url и fail_url](http://raw.githubusercontent.com/Futubank/futubank/master/static/bitrix/itworks.png)
 
 
 Настройки в личном кабинете Futubank.com
@@ -58,7 +58,7 @@ Bitrix-модуль для приёма оплаты с пластиковых �
 
 Заполните форму «Параметры платежной системы»:
    
-   ![Параметры платёжной системы](http://raw.githubusercontent.com/Futubank/futubank/master/static/bitrix/ps-params.png)
+![Параметры платёжной системы](http://raw.githubusercontent.com/Futubank/futubank/master/static/bitrix/ps-params.png)
 
    * название: Futubank.com
    * активность: отмечено
@@ -71,7 +71,7 @@ Bitrix-модуль для приёма оплаты с пластиковых �
 
 Заполните основные поля формы «Обработчик для типа плательщика»:
 
-   ![Физическое лицо](http://raw.githubusercontent.com/Futubank/futubank/master/static/bitrix/ph1.png)
+![Физическое лицо](http://raw.githubusercontent.com/Futubank/futubank/master/static/bitrix/ph1.png)
 
    * применяется для данного типа плательщика: отмечено
    * название: Futubank.com
@@ -80,19 +80,19 @@ Bitrix-модуль для приёма оплаты с пластиковых �
 
 Чуть ниже, в разделе «Свойства обработчика» укажите merchant_id и secret_key:
 
-   ![merchant_id и secret_key](http://raw.githubusercontent.com/Futubank/futubank/master/static/bitrix/ph2.png)
+![merchant_id и secret_key](http://raw.githubusercontent.com/Futubank/futubank/master/static/bitrix/ph2.png)
 
 Эти значения уникальны для каждого магазина, посмотреть их можно в личном кабинете Futubank в разделе «Готовые модули»:
 
-   ![merchant_id и secret_key](http://raw.githubusercontent.com/Futubank/futubank/master/static/bitrix/mods.png)
+![merchant_id и secret_key](http://raw.githubusercontent.com/Futubank/futubank/master/static/bitrix/mods.png)
 
 Можно указать адреса страниц, которые будут показываться в случае успешного и неуспешного платежа:
 
-   ![success_url и fail_url](http://raw.githubusercontent.com/Futubank/futubank/master/static/bitrix/urls.png)
+![success_url и fail_url](http://raw.githubusercontent.com/Futubank/futubank/master/static/bitrix/urls.png)
 
 Не забудьте сохранить сделанные изменения:
 
-   ![success_url и fail_url](http://raw.githubusercontent.com/Futubank/futubank/master/static/bitrix/save.png)
+![success_url и fail_url](http://raw.githubusercontent.com/Futubank/futubank/master/static/bitrix/save.png)
 
 Готово!
 =======
