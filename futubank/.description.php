@@ -1,5 +1,7 @@
 <?if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) die();?><?
-include(GetLangFileName(dirname(__FILE__).'/', '/payment.php'));
+
+$after =  (LANGUAGE_ID == 'en') ? '/payment.php' : '/payment.' + SITE_CHARSET + '.php';
+include(GetLangFileName(dirname(__FILE__) . '/', $after));
 
 $psTitle = GetMessage('SPCP_DTITLE');
 $psDescription = GetMessage('SPCP_DDESCR');

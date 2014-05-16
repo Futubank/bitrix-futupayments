@@ -1,11 +1,6 @@
 <?if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) die();?><?
 
-if (LANGUAGE_ID == 'en')  {
-	$after = '/payment.php';
-} else {
-	$after = '/payment.' + SITE_CHARSET + '.php';
-}
-
+$after =  (LANGUAGE_ID == 'en') ? '/payment.php' : '/payment.' + SITE_CHARSET + '.php';
 include(GetLangFileName(dirname(__FILE__) . '/', $after));
 include('futubank_core.php');
 
