@@ -6,31 +6,13 @@ Bitrix-модуль для приёма оплаты с пластиковых �
 Установка на сервер
 ===================
 
-Скачайте и распакуйте архив: 
+1. Скачайте и распакуйте архив: 
 
     https://github.com/Futubank/bitrix-futupayments/archive/master.zip
 
-Скопируйте каталог futubank из архива в каталог
-
-    /var/www/bitrix/modules/sale/payment
-
-или, для Windows:
-
-    C:\Program Files\BitrixEnvironment\www\bitrix\modules\sale\payment
-
-Скопируйте файл futupayments.php в каталог 
-   
-    /var/www
-
-...или, для Windows:
-
-    C:\Program Files\BitrixEnvironment\www
-
-Убедитесь, что по адресу
-
-    http://вашсайт/futupayments.php
-
-теперь показывается строчка «It works!»:
+2. Скопируйте каталог futubank из архива в каталог `/var/www/bitrix/modules/sale/payment` (для Windows: `C:\Program Files\BitrixEnvironment\www\bitrix\modules\sale\payment`)
+3. Скопируйте файл futupayments.php в каталог `/var/www` (для Windows: `C:\Program Files\BitrixEnvironment\www`)
+4. Убедитесь, что по адресу `http://вашсайт/futupayments.php` теперь показывается строчка «It works!»:
 
 ![It works](http://raw.githubusercontent.com/Futubank/futubank/master/static/bitrix/itworks.png)
 
