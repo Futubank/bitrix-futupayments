@@ -14,7 +14,7 @@ Bitrix-модуль для приёма оплаты с пластиковых �
 3. Скопируйте файл futupayments.php в каталог `/var/www` (для Windows: `C:\Program Files\BitrixEnvironment\www`)
 4. Убедитесь, что по адресу `http://вашсайт/futupayments.php` теперь показывается строчка «It works!»:
 
-![It works](http://raw.githubusercontent.com/Futubank/futubank/master/static/bitrix/itworks.png)
+![It works](http://futubank.github.io/futuplugins/static/bitrix/itworks.png)
 
 
 Настройки в личном кабинете Futubank.com
@@ -24,7 +24,7 @@ Bitrix-модуль для приёма оплаты с пластиковых �
 
     http://вашсайт/futupayments.php
 
-![Уведомления](http://raw.githubusercontent.com/Futubank/futubank/master/static/bitrix/cb.png)
+![Уведомления](http://futubank.github.io/futuplugins/static/bitrix/cb.png)
 
 
 Настройки на вашем сайте
@@ -36,11 +36,11 @@ Bitrix-модуль для приёма оплаты с пластиковых �
 
 и нажмите кнопку «Добавить платежную систему»:
 
-![Добавить платежную систему](http://raw.githubusercontent.com/Futubank/futubank/master/static/bitrix/add-ps.png)
+![Добавить платежную систему](http://futubank.github.io/futuplugins/static/bitrix/add-ps.png)
 
 Заполните форму «Параметры платежной системы»:
    
-![Параметры платёжной системы](http://raw.githubusercontent.com/Futubank/futubank/master/static/bitrix/ps-params.png)
+![Параметры платёжной системы](http://futubank.github.io/futuplugins/static/bitrix/ps-params.png)
 
    * название: Futubank.com
    * активность: отмечено
@@ -53,7 +53,7 @@ Bitrix-модуль для приёма оплаты с пластиковых �
 
 Заполните основные поля формы «Обработчик для типа плательщика»:
 
-![Физическое лицо](http://raw.githubusercontent.com/Futubank/futubank/master/static/bitrix/ph1.png)
+![Физическое лицо](http://futubank.github.io/futuplugins/static/bitrix/ph1.png)
 
    * применяется для данного типа плательщика: отмечено
    * название: Futubank.com
@@ -62,19 +62,19 @@ Bitrix-модуль для приёма оплаты с пластиковых �
 
 Чуть ниже, в разделе «Свойства обработчика» укажите merchant_id и secret_key:
 
-![merchant_id и secret_key](http://raw.githubusercontent.com/Futubank/futubank/master/static/bitrix/ph2.png)
+![merchant_id и secret_key](http://futubank.github.io/futuplugins/static/bitrix/ph2.png)
 
 Эти значения уникальны для каждого магазина, посмотреть их можно в личном кабинете Futubank в разделе «Готовые модули»:
 
-![Готовые модули](http://raw.githubusercontent.com/Futubank/futubank/master/static/bitrix/mods.png)
+![Готовые модули](http://futubank.github.io/futuplugins/static/bitrix/mods.png)
 
 Можно указать адреса страниц, которые будут показываться в случае успешного и неуспешного платежа:
 
-![success_url и fail_url](http://raw.githubusercontent.com/Futubank/futubank/master/static/bitrix/urls.png)
+![success_url и fail_url](http://futubank.github.io/futuplugins/static/bitrix/urls.png)
 
 Не забудьте сохранить сделанные изменения:
 
-![Сохранить изменения](http://raw.githubusercontent.com/Futubank/futubank/master/static/bitrix/save.png)
+![Сохранить изменения](http://futubank.github.io/futuplugins/static/bitrix/save.png)
 
 Готово!
 =======
