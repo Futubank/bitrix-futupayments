@@ -1,13 +1,21 @@
 <?if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) die();?><?
 
-$after =  (LANGUAGE_ID == 'en') ? '/payment.php' : '/payment.' + SITE_CHARSET + '.php';
+define('FUTUBANK_VERSION', '1.0');
+
+$after =  (LANGUAGE_ID == 'en') ? '/payment.php' : '/payment.' . SITE_CHARSET . '.php';
 include(GetLangFileName(dirname(__FILE__) . '/', $after));
 include('futubank_core.php');
+
+$sVer = ($GLOBALS['USER']->CanDoOperation('view_other_settings')? " ".SM_VERSION : "");
+$cms_info = 'Bitrix ' . $sVer;
+$plugin_version = 'Futupayments Bitrix plugin v.' . (defined('FUTUBANK_VERSION') ? FUTUBANK_VERSION : 'Unknown');
 
 $ff = new FutubankForm(
 	CSalePaySystemAction::GetParamValue('MERCHANT_ID'),
 	CSalePaySystemAction::GetParamValue('SECRET_KEY'),
-	CSalePaySystemAction::GetParamValue('IS_TEST') == 'Y'
+	CSalePaySystemAction::GetParamValue('IS_TEST') == 'Y',
+	$plugin_version,
+    $cms_info
 );
 
 $order_id = IntVal($GLOBALS['SALE_INPUT_PARAMS']['ORDER']['ID']); 
