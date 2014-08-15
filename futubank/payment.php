@@ -15,7 +15,7 @@ $ff = new FutubankForm(
 	CSalePaySystemAction::GetParamValue('SECRET_KEY'),
 	CSalePaySystemAction::GetParamValue('IS_TEST') == 'Y',
 	$plugin_version,
-    $cms_info
+	$cms_info
 );
 
 $order_id = IntVal($GLOBALS['SALE_INPUT_PARAMS']['ORDER']['ID']); 

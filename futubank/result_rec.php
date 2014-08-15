@@ -2,48 +2,47 @@
 
 include('futubank_core.php');
 
-$ff = new FutubankForm(
-	CSalePaySystemAction::GetParamValue('MERCHANT_ID'),
-	CSalePaySystemAction::GetParamValue('SECRET_KEY'),
-	CSalePaySystemAction::GetParamValue('IS_TEST') == 'Y'
-);
-
-$error = null;
-if (!$ff->is_signature_correct($_POST)) {
-	$error = 'Incorrect "signature"';
-} else  if (!($order_id = IntVal($_POST['order_id']))) {
-	$error = 'Empty "order_id"';
-} else if (!($arOrder = CSaleOrder::GetByID($order_id))) {
-	$error = 'Unknown order_id';
-}
-
-if ($error) {
-	echo "ERROR: $error\n";
-} else {
-	echo "OK$order_id\n";
-	if ($ff->is_order_completed($_POST)) {
-		echo "order completed\n";
-		if (CSalePaySystemAction::GetParamValue('CHANGE_STATUS_PAY') == 'Y') {
-			if ($arOrder['PAYED'] == 'Y') {
-				echo "already payed\n";
-			} else {
-				if (CSaleOrder::PayOrder($arOrder['ID'], 'Y', true, true)) {
-					echo "payed now\n";
-				} else {
-					echo "ERROR: can't change payment status\n";
-				}
-			}
-		}
-		CSaleOrder::Update($arOrder['ID'], array(
+class FutubankCallbackHandler extends AbstractFutubankCallbackHandler {
+	protected function get_futubank_form() {
+		return new FutubankForm(
+			CSalePaySystemAction::GetParamValue('MERCHANT_ID'),
+			CSalePaySystemAction::GetParamValue('SECRET_KEY'),
+			CSalePaySystemAction::GetParamValue('IS_TEST') == 'Y'
+		);
+	}
+	protected function load_order($order_id) {
+		return CSaleOrder::GetByID($order_id);
+	}
+	protected function get_order_currency($order) {
+		return $order['PS_CURRENCY'];
+	}
+	protected function get_order_amount($order) {
+		return $order['PS_SUM'];
+	}
+	protected function is_order_completed($order) {
+		return ($order['PAYED'] == 'Y');
+	}
+	protected function mark_order_as_completed($order, array $data) {
+		CSaleOrder::PayOrder($order['ID'], 'Y', true, true);
+		CSaleOrder::Update($order['ID'], array(
 			'PS_STATUS' => 'Y',
-			'PS_SUM' => $_POST['amount'],
-			'PS_CURRENCY' => $_POST['currency'],
-			'PS_STATUS_MESSAGE' => $_POST['message'],
+			'PS_SUM' => $data['amount'],
+			'PS_CURRENCY' => $data['currency'],
+			'PS_STATUS_MESSAGE' => $data['message'],
 			'PS_RESPONSE_DATE' => Date(CDatabase::DateFormatToPHP(CLang::GetDateFormat('FULL', LANG))),
 		));
-	} else {
-		echo "order not completed\n";
+	}
+	protected function mark_order_as_error($order, array $data) {
+		CSaleOrder::Update($order['ID'], array(
+			'PS_STATUS' => 'N',
+			'PS_SUM' => $data['amount'],
+			'PS_CURRENCY' => $data['currency'],
+			'PS_STATUS_MESSAGE' => $data['message'],
+			'PS_RESPONSE_DATE' => Date(CDatabase::DateFormatToPHP(CLang::GetDateFormat('FULL', LANG))),
+		));
 	}
 }
 
+$h = FutubankCallbackHandler();
+$h->show($_POST);
 ?>
