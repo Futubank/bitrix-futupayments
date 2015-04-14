@@ -1,6 +1,6 @@
 <?if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) die();?><?
 
-define('FUTUBANK_VERSION', '1.0');
+define('FUTUBANK_VERSION', '1.0.1');
 
 $after =  (LANGUAGE_ID == 'en') ? '/payment.php' : '/payment.' . SITE_CHARSET . '.php';
 include(GetLangFileName(dirname(__FILE__) . '/', $after));

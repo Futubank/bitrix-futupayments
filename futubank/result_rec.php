@@ -14,16 +14,16 @@ class FutubankCallbackHandler extends AbstractFutubankCallbackHandler {
 		return CSaleOrder::GetByID($order_id);
 	}
 	protected function get_order_currency($order) {
-		return $order['PS_CURRENCY'];
+		return $order['CURRENCY'];
 	}
 	protected function get_order_amount($order) {
-		return $order['PS_SUM'];
+		return $order['PRICE'];
 	}
 	protected function is_order_completed($order) {
 		return ($order['PAYED'] == 'Y');
 	}
 	protected function mark_order_as_completed($order, array $data) {
-		CSaleOrder::PayOrder($order['ID'], 'Y', true, true);
+		CSaleOrder::PayOrder($order['ID'], 'Y');
 		CSaleOrder::Update($order['ID'], array(
 			'PS_STATUS' => 'Y',
 			'PS_SUM' => $data['amount'],
@@ -43,6 +43,6 @@ class FutubankCallbackHandler extends AbstractFutubankCallbackHandler {
 	}
 }
 
-$h = FutubankCallbackHandler();
+$h = new FutubankCallbackHandler();
 $h->show($_POST);
 ?>

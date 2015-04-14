@@ -1,8 +1,8 @@
-<?php
-ob_start();
-require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
-ob_end_clean();
-ob_end_flush();
+<?
+define("NO_KEEP_STATISTIC", true);
+define("NOT_CHECK_PERMISSIONS", true);
+require_once($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/main/include/prolog_before.php");
+
 
 if (!$_POST) {
 	echo "It works!";
@@ -17,4 +17,6 @@ if (!$_POST) {
 		)
 	);
 }
+
+require($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/main/include/epilog_after.php");
 ?>
